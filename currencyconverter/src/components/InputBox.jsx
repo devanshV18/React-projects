@@ -1,24 +1,22 @@
 import React, {useId} from 'react'
 
 function InputBox({
-    //input props
     label,
     amount,
     onAmountChange,
     onCurrencyChange,
-    currencyOptions = [], // all currency options will be looped thru in an array
-    selectCurrency = "usd",   //default as used
+    currencyOptions = [],
+    selectCurrency = "usd",
     amountDisable = false,
     currencyDisable = false,
-    
     className = "",
 }) {
-   
-const amountInputId = useId()   //generates a random unique value and we can use this to bind la  bel and value
+   const amountInputId = useId()
+
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
             <div className="w-1/2">
-                <label htmlFor={amountInputId} className="text-black/40 mb-2 inline-block">
+                <label htmlFor={amountInputId}  className="text-black/40 mb-2 inline-block">
                     {label}
                 </label>
                 <input
@@ -27,7 +25,7 @@ const amountInputId = useId()   //generates a random unique value and we can use
                     type="number"
                     placeholder="Amount"
                     disabled={amountDisable}
-                    value = {amount}
+                    value={amount}
                     onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
                 />
             </div>
@@ -36,13 +34,13 @@ const amountInputId = useId()   //generates a random unique value and we can use
                 <select
                     className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
                     value={selectCurrency}
-                    onChange={(e) => onCurrencyChange && onAmountChange(e.target.value)}
-                    disabled={currencyDisable }
+                    onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
+                    disabled={currencyDisable}
                 >
                     
                         {currencyOptions.map((currency) => (
-                            <option key={currency} value={currency}>
-                            {curency}
+                            <option key={currency} value={currency} selectCurrency = {currency}>
+                            {currency}
                             </option>
                         ))}
                 
