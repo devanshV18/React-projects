@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -72,7 +73,7 @@ export default function Footer() {
                     <span className="text-sm text-gray-500 sm:text-center">
                         © 2023
                         <a href="https://hiteshchoudhary.com/" className="hover:underline">
-                            hiteshchoudhary
+                            devanshverma
                         </a>
                         . All Rights Reserved.
                     </span>
@@ -159,3 +160,4 @@ export default function Footer() {
         </footer>
     );
 }
+
